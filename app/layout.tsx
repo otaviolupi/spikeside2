@@ -1,3 +1,4 @@
+import Header from './components/header'
 import type { Metadata } from 'next'
  
 // These styles apply to every route in the application
@@ -15,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Header />
       <body>{children}</body>
     </html>
   )
 }
+
