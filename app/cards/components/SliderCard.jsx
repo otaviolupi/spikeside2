@@ -12,6 +12,7 @@ const SliderCard = ({setItem}) => {
     const sliderRef = useRef(null);
 
     const handleClick = (index, it) => {
+      console.log("Entrou")
       setCurrentIndex(index < 0 ? index + 6 : index - 6);
       sliderRef.current.slickGoTo(index < 0 ? index + 6 : index - 6);
       setItem(it);
@@ -30,6 +31,7 @@ const SliderCard = ({setItem}) => {
       async function fetchData() {
         try {
           const response = await axios.get('https://valorant-api.com/v1/playercards');
+          console.log(response)
           setCard(response.data.data);
           setTimeout(() => {
             if(card.length){
@@ -43,9 +45,8 @@ const SliderCard = ({setItem}) => {
       fetchData();
     }, []);
 
-
     return (
-      <div className='block w-[85%] mx-0 my-auto'>
+      <div>
         <Slider ref={sliderRef} {...settings}>
               {card.map((item, index) => (
                   <div key={item.uuid} onClick={() => handleClick(index, item)}>

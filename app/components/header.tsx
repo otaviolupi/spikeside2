@@ -1,7 +1,10 @@
+'use client'
+
 import { UserNav } from './navigation'
+import React from 'react'
 
 export default function Header() { 
-    let navLinks = [
+    const navLinks = [
         {
             name: "Teste 01",
             href: "test-1"
@@ -13,11 +16,13 @@ export default function Header() {
     ];
 
     return (
-        <header className='px-[64px] flex items-center bg-[#1F2326] justify-between'>
-            <img className='w-auto h-auto border-r border-l-white' src="/logo-text.png" alt="Spike Side" />
-            <img className='w-auto h-auto mx-[18px]' src="/logo-icon.png" alt="Spike Side" />
-            <UserNav navLinks={navLinks} />
-            <a className='bg-[#ff4655] text-white py-4 px-6'>Monte seu card!</a>
-        </header>
+        <React.Fragment>
+            <nav className='px-[64px] flex items-center bg-[#1F2326] justify-between'>
+                <img className='w-auto h-auto border-r border-l-white' src="/logo-text.png" alt="Spike Side" />
+                <img className='w-auto h-auto mx-[18px]' src="/logo-icon.png" alt="Spike Side" />
+                <UserNav navLinks={navLinks} />
+                <a className='bg-[#ff4655] text-white py-4 px-6'>Monte seu card!</a>
+            </nav>
+        </React.Fragment>   
     )
 }

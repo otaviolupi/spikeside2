@@ -17,7 +17,8 @@ export default function Page() {
 
     return (
         <div 
-        className="flex bg-cover h-[100vh] w-[100%] overflow-hidden justify-center items-center flex-wrap flex-col bg-bg-image" 
+        suppressHydrationWarning={true}
+         
         style={{
             backgroundImage: `url('/bg.jpg')`,
         }}>
