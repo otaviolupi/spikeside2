@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useContext, useRef } from 'react';
+import Image from 'next/image'
 import axios from 'axios';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -22,9 +23,7 @@ const SliderCard = ({setItem}) => {
       dots: false,
       arrows: false,
       infinite: true,
-      slidesToShow: 13,
-      slidesToScroll: 1,
-      afterChange: (index) => setCurrentIndex(index),
+      slidesToShow: 13
     };
 
     useEffect(() => {
@@ -32,6 +31,7 @@ const SliderCard = ({setItem}) => {
         try {
           const response = await axios.get('https://valorant-api.com/v1/playercards');
           console.log(response)
+          debugger;
           setCard(response.data.data);
           setTimeout(() => {
             if(card.length){
@@ -46,11 +46,11 @@ const SliderCard = ({setItem}) => {
     }, []);
 
     return (
-      <div>
+      <div className='w-[85%] my-0 mx-auto'>
         <Slider ref={sliderRef} {...settings}>
               {card.map((item, index) => (
                   <div key={item.uuid} onClick={() => handleClick(index, item)}>
-                      <img src={item.smallArt} alt={item.displayName} style={{width:100}} />
+                      <Image className='w-[100%]' src={item.smallArt} alt={item.displayName} width={100} height={100} />
                   </div>
               ))}
           </Slider>

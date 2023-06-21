@@ -18,14 +18,14 @@ export default function Page() {
     return (
         <div 
         suppressHydrationWarning={true}
-         
+        className="bg-cover py-[59px]"
         style={{
             backgroundImage: `url('/bg.jpg')`,
         }}>
             <PlayerTitle item={item} />
-            <PlayerCard item={item} border={border} setBorder={setBorder} level={level} setLevel={setLevel} username={username} setUserName={setUserName} title={title}></PlayerCard>
             <div className="flex justify-between w-[85%] my-0 mx-auto">
                 <TitlesSelect title={title} setTitle={setTitle} box={box} setBox={setBox} />
+                <PlayerCard item={item} border={border} setBorder={setBorder} level={level} setLevel={setLevel} username={username} setUserName={setUserName} title={title}></PlayerCard>
                 <OrderButton />
             </div>
             <SliderCard setItem={setItem}  />

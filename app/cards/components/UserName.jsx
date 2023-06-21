@@ -7,7 +7,7 @@ const UserName = ({username, setUserName}) => {
   }
 
   return (
-    <div className="flex justify-center items-center px-0 py-6 bottom-[30%] text-[14px] absolute left-0 flex-wrap w-[100%] bg-[#eaeeb2]">
+    <div className="flex justify-center items-center px-0 py-[8px] bottom-[37%] text-[14px] absolute left-0 flex-wrap w-[100%] bg-[#eaeeb2]">
       <input onChange={handleChange} value={username}  placeholder="Insira seu nome de usuário" />
     </div>
   );
